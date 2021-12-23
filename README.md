@@ -1,1 +1,1 @@
-# node-casbin-demo
+# node-casbin-rbac
