@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "src/"
+  ],
+  "ingore": [],
+  "ext": "js"
+}

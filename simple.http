@@ -1,0 +1,29 @@
+###
+PUT http://localhost:5001/role
+content-type: application/json
+
+{
+  "rolename": "user",
+  "nickname": "普通用户",
+}
+
+###
+PUT http://localhost:5001/role
+content-type: application/json
+
+{
+  "rolename": "admin",
+  "nickname": "管理员",
+}
+
+###
+GET http://localhost:5001/role
+content-type: application/json
+
+###
+GET http://localhost:5001/user
+content-type: application/json
+
+###
+GET http://localhost:5001/getUserWithRole
+content-type: application/json

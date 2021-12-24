@@ -1,0 +1,5 @@
+p, user, /user, GET
+p, user, /user, PUT
+p, admin, /user, POST
+p, admin, /user, DELETE
+p, admin, /setUserRole, POST
