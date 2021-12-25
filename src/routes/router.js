@@ -139,10 +139,9 @@ router.post("/login",
   }),
   function (req, res) {
     if (req.session) {
-      console.log("isAuthenticated: ", true);
       req.session.isAuthenticated = true;
     }
-    res.status(200).redirect("/");
+    res.status(200).redirect(`/user/${req.user.id}`);
   }
 );
 
@@ -160,11 +159,13 @@ router.delete("/user", UserController.deleteUser);
 
 router.post("/user", UserController.updateUser);
 
-router.post("/setUserRole", UserController.setUserRole);
+router.get("/users", UserController.getAllUsers);
 
-router.get("/user", UserController.getAllUsers);
+router.get("/user/:userId", UserController.getUserById);
 
-router.get("/getUserWithRole", UserController.getUserWithRole);
+router.get("/getUserWithRole", checkLogin, UserController.getUserWithRole);
+
+router.post("/setUserRole", checkLogin, UserController.setUserRole);
 
 // =================== 角色 ======================
 router.all("/role", checkLogin);

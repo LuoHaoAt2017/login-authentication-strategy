@@ -48,7 +48,7 @@ async function getAllUsers(req, res) {
 
 async function getUserById(req, res) {
   try {
-    const uid = req.query.userId;
+    const uid = req.params.userId;
     const data =  await User.findByPk(uid);
     res.status(200).send(formatResult(data));
   } catch (err) {

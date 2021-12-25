@@ -45,11 +45,9 @@ import { User } from './model/user';
       }
     });
     if (user.password === password) {
-      console.log('resolved');
       done(null, user);
     } else {
-      console.log('rejected');
-      done(false, null);
+      done(null, false);
     }
   }));
   // 为了使持久会话工作，经过身份验证的用户必须序列化到会话。
