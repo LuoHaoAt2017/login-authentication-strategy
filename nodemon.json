@@ -3,5 +3,6 @@
     "src/"
   ],
   "ingore": [],
-  "ext": "js"
+  "ext": "js",
+  "delay": 3000
 }

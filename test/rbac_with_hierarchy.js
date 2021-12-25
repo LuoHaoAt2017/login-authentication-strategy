@@ -3,8 +3,8 @@ const { newEnforcer } = require('casbin');
 
 describe("casbin API 测试", function() {
 
-  const model_path = path.resolve(__dirname, '../src/config/rbac_model.conf');
-  const policy_path = path.resolve(__dirname, '../src/config/rbac_with_hierarchy_policy.csv');
+  const model_path = path.resolve(__dirname, './rbac_model.conf');
+  const policy_path = path.resolve(__dirname, './rbac_with_hierarchy_policy.csv');
   
   test("角色测试 getRolesForUser", async function() {
     const enforcer = await newEnforcer(model_path, policy_path);
