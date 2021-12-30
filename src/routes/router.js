@@ -81,10 +81,11 @@ router.get("/login", function (req, res) {
           <label for="password">密码</label>
           <input type="password" class="form-control" name="password" id="password">
         </div>
-        <div class="form-group">
+        <div class="form-group border-bottom">
           <div class="btn-group" role="group" style="width:100%;">
-            <button type="submit" class="btn btn-primary">登录</button>
+            <button type="submit" class="btn btn-primary" role="button">确定登录</button>
             <a href="/register" class="btn btn-success" role="button">前往注册</a>
+            <a href="/auth/github" class="btn btn-warning" role="button">GitHub授权</a>
           </div>
         </div>
       </form>
@@ -131,7 +132,8 @@ router.get("/register", function (req, res) {
   });
 });
 
-router.post("/login",
+router.post(
+  "/login",
   passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true,
@@ -147,10 +149,24 @@ router.post("/login",
 
 router.put("/register", UserController.createUser);
 
-router.get("/logout", checkLogin, function(req, res) {
+router.get("/logout", checkLogin, function (req, res) {
   req.session.isAuthenticated = false;
   res.redirect("/login");
 });
+
+router.get("/auth/github", passport.authenticate("github"));
+
+router.get(
+  "/auth/github/callback",
+  passport.authenticate("github", { failureRedirect: "/login" }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    if (req.session) {
+      req.session.isAuthenticated = true;
+    }
+    res.redirect("/");
+  }
+);
 
 // =================== 用户 ======================
 router.all("/user", checkLogin);

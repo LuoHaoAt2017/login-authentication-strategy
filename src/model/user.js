@@ -23,6 +23,10 @@ export default function(sequelize) {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    githubId: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }
   }, {
     // options
     sequelize: sequelize,

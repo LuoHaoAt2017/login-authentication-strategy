@@ -34,7 +34,7 @@ async function connect() {
     // 测试连接
     await sequelize.authenticate();
     // 一次同步所有模型
-    await sequelize.sync({ alert: true });
+    await sequelize.sync({ alter: true });
     console.log('Connection has been established successfully.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
