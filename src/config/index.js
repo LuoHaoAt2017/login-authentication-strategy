@@ -5,3 +5,7 @@ export const db = {
   dialect: 'mysql', // 采用的数据库方案
   host: 'localhost',
 }
+
+export const secret = "express_jwt_secret";
+
+export const algorithm = "HS256";
