@@ -25,6 +25,9 @@ router.post("/login", async function (req, res) {
       username: username,
     },
   });
+  if (!user) {
+    res.status(404).send(formatResult(null, "用户名不存在"));
+  }
   if (user.password === password) {
     const token = jwt.sign(
       {
@@ -43,7 +46,7 @@ router.post("/login", async function (req, res) {
       })
     );
   } else {
-    res.status(500).redirect("/login");
+    res.status(500).send(formatResult(null, "密码错误"));
   }
 });
 

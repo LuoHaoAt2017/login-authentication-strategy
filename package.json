@@ -1,5 +1,5 @@
 {
-  "name": "login-authentication",
+  "name": "login-authentication-strategy",
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",
@@ -66,12 +66,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LuoHaoAt2017/login-authentication.git"
+    "url": "git+https://github.com/LuoHaoAt2017/login-authentication-strategy.git"
   },
   "author": "LuoHao",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LuoHaoAt2017/login-authentication/issues"
+    "url": "https://github.com/LuoHaoAt2017/login-authentication-strategy/issues"
   },
-  "homepage": "https://github.com/LuoHaoAt2017/login-authentication#readme"
+  "homepage": "https://github.com/LuoHaoAt2017/login-authentication-strategy#readme"
 }
